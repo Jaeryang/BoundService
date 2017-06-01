@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 public class BoundServiceActivity extends AppCompatActivity {
     LocalService mService;
-    boolean mBound= "false";
+    boolean mBound= false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,14 +44,15 @@ public class BoundServiceActivity extends AppCompatActivity {
     }
 
     private ServiceConnection mConnection = new ServiceConnection() {
-
-        public void onServiceConnected(ComponentName className, IBinder service) {
+        @Override
+        public void onServiceConnected(ComponentName name, IBinder service) {
             LocalService.LocalBinder binder = (LocalService.LocalBinder) service;
             mService = binder.getService();
             mBound = true;
         }
 
-        public void onserviceDisconnected(ComponentName arg0) {
+        @Override
+        public void onServiceDisconnected(ComponentName name) {
             mBound = false;
         }
     };

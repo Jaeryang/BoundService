@@ -13,8 +13,9 @@
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
+                <service android:name="Localservice"></service>
             </intent-filter>
-            <service android:name="Localservice"></service>
+
         </activity>
 
     </application>

@@ -7,9 +7,6 @@ import android.os.IBinder;
 
 import java.util.Random;
 
-/**
- * Created by 608 on 2017-05-30.
- */
 
 public class LocalService extends Service {
 
